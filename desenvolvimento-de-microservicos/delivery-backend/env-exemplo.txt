@@ -1,0 +1,4 @@
+PORT=3000
+MONGODB_URI=mongodb://<username>:<password>@<host>:<port>/<database>
+JWT_KEY=
+JWT_EXPIRES=24h

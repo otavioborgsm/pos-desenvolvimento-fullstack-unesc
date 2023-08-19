@@ -1,0 +1,7 @@
+PORT=3000
+MONGODB_URI= mongodb://<username>:<password>@<host>:<port>/<database>
+JWT_KEY=
+JWT_EXPIRES=24h
+
+RABBIT_MQ_URI = amqps://<username>:<password>@<host>:<port>/<virtual_host>
+RABBIT_MQ_RESTAURANTES_QUEUE = 'micro-restaurante'

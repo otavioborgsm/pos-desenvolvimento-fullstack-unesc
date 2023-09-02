@@ -9,8 +9,8 @@ async function bootstrap() {
  // app.useGlobalPipes(new ValidationPipe());
   
   const config = new DocumentBuilder()
-    .setTitle('Delivery API')
-    .setDescription('Demonstração API RESTFUL')
+    .setTitle('Delivery Gateway')
+    .setDescription('Demonstração de API Gateway para controle de Microsserviços.')
     .setVersion('1.0')
     .addBearerAuth({
       type: 'http',

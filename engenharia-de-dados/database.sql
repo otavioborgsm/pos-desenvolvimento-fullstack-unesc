@@ -257,4 +257,43 @@ SELECT PD.COD_PEDIDO,
 FROM PEDIDOS PD
 JOIN PRODUTOS P ON (PD.COD_PRODUTO = P.COD_PRODUTO)
 
+-------------------------------------------
 
+/* VACUUM */
+
+CREATE TABLE professor (
+	id SERIAL PRIMARY KEY,
+	nome VARCHAR(255) NOT NULL,
+	salario DECIMAL(10,2)
+);
+
+DO $$
+	DECLARE
+	BEGIN
+		FOR i IN 1..1000000 LOOP
+			INSERT INTO professor (nome, salario) VALUES ('Professor' || i, random() * 1000 + 1);
+		END LOOP;
+	END;
+$$;
+
+SELECT relname, n_dead_tup FROM pg_stat_user_tables;
+SELECT pg_size_pretty(pg_relation_size('professor'));
+DELETE FROM professor WHERE id % 2 = 0; -- Remove professores com id par.
+
+VACUUM ANALYSE professor; -- Este comando bloqueia a base
+
+--------------------------------
+
+/* BACKUP e RESTORE */
+
+-- %3 -> host
+-- %2 -> local onde será salvo o arquivo .dump
+-- %1 -> nome do banco 
+
+-- Comando de Backup
+-- "C:\Program Files\PostgreSQL\15\bin" -h %3 -p 5432 -U postgres -F c -b -v -f %2 %1
+
+-- Comando Restore
+-- "C:\Program Files\PostgreSQL\15\bin\dropdb.exe" -h %3 -U postgres %1
+-- "C:\Program Files\PostgreSQL\15\bin\createdb.exe" -E UTF8 -U postgres -h localhost -p 5432 %1
+-- "C:\Program Files\PostgreSQL\15\bin\pg_restore.exe" -h %3 -p 5432 -U postgres -d %1 -v %2

@@ -286,14 +286,15 @@ VACUUM ANALYSE professor; -- Este comando bloqueia a base
 
 /* BACKUP e RESTORE */
 
+-- %4 - > porta do banco
 -- %3 -> host
 -- %2 -> local onde será salvo o arquivo .dump
 -- %1 -> nome do banco 
 
 -- Comando de Backup
--- "C:\Program Files\PostgreSQL\15\bin" -h %3 -p 5432 -U postgres -F c -b -v -f %2 %1
+-- "C:\Program Files\PostgreSQL\15\bin" -h %3 -p %4 -U postgres -F c -b -v -f %2 %1
 
 -- Comando Restore
 -- "C:\Program Files\PostgreSQL\15\bin\dropdb.exe" -h %3 -U postgres %1
--- "C:\Program Files\PostgreSQL\15\bin\createdb.exe" -E UTF8 -U postgres -h localhost -p 5432 %1
--- "C:\Program Files\PostgreSQL\15\bin\pg_restore.exe" -h %3 -p 5432 -U postgres -d %1 -v %2
+-- "C:\Program Files\PostgreSQL\15\bin\createdb.exe" -E UTF8 -U postgres -h %3 -p %4 %1
+-- "C:\Program Files\PostgreSQL\15\bin\pg_restore.exe" -h %3 -p %4 -U postgres -d %1 -v %2

@@ -1,0 +1,11 @@
+// Customizar as variáveis do bootstrap
+$body-bg: #f3f3f3;
+//Adicionar o bootstrap
+@import '~bootstrap/scss/bootstrap.scss';
+
+// Importanto fonte
+@import url("https://fonts.googleapis.com/css2?family=Mouse+Memoirs&display=swap");
+// Aplicar fonte para todos os elementos html
+* {
+  font-family: 'Mouse memoirs', sans-serif;
+}

@@ -2,10 +2,20 @@ import classNames from 'classnames';
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 
+interface IMenu {
+    title: string,
+    to: string
+}
 
 export default function Navbar(){
 
+    const [menus, setMenus] = useState<IMenu[]>([]);
     const [showMobile, setShowMobile] = useState(false)
+
+    import('./menus.json')
+    .then(({ default: menus }) => {
+      setMenus(menus)
+    })
    
     return(
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
@@ -24,22 +34,20 @@ export default function Navbar(){
                     { 'show': showMobile },
                 )}>
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li className="nav-item">
-                            <NavLink
-                                className={({ isActive }) => {
-                                return classNames('nav-link', { 'active': isActive }) 
-                                }}
-                                to='/conteudo'
-                            >Conteudo</NavLink>              
-                        </li>
-                        <li className="nav-item">
-                            <NavLink
-                                className={({ isActive }) => {
-                                return classNames('nav-link', { 'active': isActive }) 
-                                }}
-                                to='/sobre'
-                            >Sobre</NavLink>                       
-                        </li>
+                        {
+                            menus.map((item, index) => (
+                                <li key={index} className="nav-item">
+                                <NavLink
+                                    className={({ isActive }) => {
+                                    return classNames('nav-link', { 'active': isActive }) 
+                                    }}
+                                    to={item.to}
+                                >
+                                    {item.title}
+                                </NavLink>
+                                </li>
+                            ))
+                        }
                     </ul>
                 </div>
             </div>

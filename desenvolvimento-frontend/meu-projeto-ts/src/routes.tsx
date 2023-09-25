@@ -4,6 +4,7 @@ import Sobre from "./pages/Sobre";
 import Conteudo from "./pages/Conteudo";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import Template from "./components/Template";
 
 export default function AppRoutes() {
     return (
@@ -11,8 +12,10 @@ export default function AppRoutes() {
             <Router>
                 <Navbar />
                 <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/conteudo" element={<Conteudo />} />
+                    <Route path="/" element={<Template />} >
+                        <Route index element={<Home />} />
+                        <Route path="/conteudo" element={<Conteudo />} />
+                    </Route>
                     <Route path="/sobre" element={<Sobre />} />
                 </Routes>
                 <Footer />

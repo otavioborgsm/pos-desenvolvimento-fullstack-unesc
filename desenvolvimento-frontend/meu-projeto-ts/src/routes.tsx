@@ -5,6 +5,7 @@ import Conteudo from "./pages/Conteudo";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Template from "./components/Template";
+import NotFound from "./pages/NotFound";
 
 export default function AppRoutes() {
     return (
@@ -17,6 +18,7 @@ export default function AppRoutes() {
                         <Route path="/conteudo" element={<Conteudo />} />
                     </Route>
                     <Route path="/sobre" element={<Sobre />} />
+                    <Route path="/*" element={<NotFound />} />
                 </Routes>
                 <Footer />
             </Router>

@@ -1,11 +1,7 @@
 import classNames from 'classnames';
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-
-interface IMenu {
-    title: string,
-    to: string
-}
+import { IMenu } from '../../types';
 
 export default function Navbar(){
 

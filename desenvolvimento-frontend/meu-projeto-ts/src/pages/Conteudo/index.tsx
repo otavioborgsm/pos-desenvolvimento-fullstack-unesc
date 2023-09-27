@@ -2,7 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { IPost } from "../../types";
 import classNames from "classnames";
-import { FaSpinner } from 'react-icons/fa'
+import { FaSpinner } from 'react-icons/fa';
+import Post from "./Post";
 
 export default function Conteudo(){
 
@@ -26,13 +27,7 @@ export default function Conteudo(){
                 <ul>
                     {
                         posts.map((item, index) => (
-                            <li key={index}>
-                                <div>
-                                    <img className="img-fluid" src={item.cover} alt={item.title}></img>
-                                </div>
-                                <h3>{item.title}</h3>
-                                <p>{item.body}</p>
-                            </li>
+                            <Post post={item} key={index} />
                         ))
                     }
                     <li></li>

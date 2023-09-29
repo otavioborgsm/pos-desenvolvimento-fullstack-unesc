@@ -1,0 +1,5 @@
+[
+    { "title": "Home", "to": "/" },
+    { "title": "Conteúdo", "to": "/conteudo" },
+    { "title": "Sobre", "to": "/sobre" }
+]

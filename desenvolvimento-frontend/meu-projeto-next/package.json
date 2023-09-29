@@ -12,7 +12,8 @@
     "axios": "^1.5.1",
     "next": "latest",
     "react": "latest",
-    "react-dom": "latest"
+    "react-dom": "latest",
+    "sass": "^1.68.0"
   },
   "devDependencies": {
     "@types/node": "latest",

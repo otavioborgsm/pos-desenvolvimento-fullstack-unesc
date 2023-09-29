@@ -1,4 +1,4 @@
-import styles from './Template.module.css'
+import styles from './Template.module.scss'
 import React from 'react'
 
 export default function Template({ children }: { children: React.ReactElement }) {

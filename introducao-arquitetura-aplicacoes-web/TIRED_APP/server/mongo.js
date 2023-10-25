@@ -10,7 +10,6 @@ var collection;
 module.exports = {
   connect: () => {
     client.connect().then((_) => {
-      console.log('chegou')
       collection = client.db('test').collection('devices');
     })
   },

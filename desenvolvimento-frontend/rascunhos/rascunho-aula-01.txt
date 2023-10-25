@@ -1,0 +1,25 @@
+Class Component:
+- São statefull (guardam o estado dentro do objeto)
+- Ciclo de vida por métodos
+- Acesso às props e states sempre referenciando o objeto
+- Dificuldade em acessar métodos (usar o bind)
+- São verbosos (muito código).
+
+Functional Component
+- São stateless
+- Ciclo de vida por hooks (eventos)
+- Acesso às props e states por parâmetro e variáveis
+- Métodos são nativos
+- Menos código para manter.
+
+Ciclo de vida - Class component
+- Mounting: constructor -> render -> update DOM -> fez o mount
+- Updating: render -> update DOM -> fez o update
+- Unmounting: será desmontado
+
+Ciclo de vida - Function Component
+Mounting: return da função
+Update: useState(), useReducer(), useContext(), useCallback()
+React update DOM -> useEffect(), useLayoutEffect() (Utilizado para demonstrar dados apenas quando tudo carrega) - > aplica dados no DOM
+
+

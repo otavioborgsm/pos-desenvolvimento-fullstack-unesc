@@ -1,0 +1,243 @@
+O Profissional de enganharia de dados deve buscar sempre o SGBD que se adeque melhor aos requisitos do projeto.
+
+Persistência Poligolta: Diferentes tipos de banco trabalham juntos
+Multi-Modelo: Armazenamento poliglota sem trade-off
+
+
+----- Big Data e analytics -----
+
+Dados de diferentes formas;
+Tecnologias embarcadas: redes que coletam dados em grande quantidade, desafios de extrair dados e informações úteis
+Flexibilidade e escalabilidade por conta do alto número de dados
+
+Big Data -> 2001
+
+- Volume: Relativo, pode ser considerado big data hoje e não no futuro
+- Velocidade: Pode limitar operação de muitos negócios
+- Variedade: Fotos e/ou vídeos, efetuar compra.... Dados estruturados e não estruturados
+- Veracidade: Em conjunto com a velocidade, é a necessidade constante de analises dos dados
+- Valor: Valor agregado do trabalho deve compensar o custo finânceiro (Dado deve trazer retorno)
+
+A maior parte dos dados de Big Data não são estruturados
+
+No big data, não mais de 20% de todos os dados são estruturados
+
+UPS -> Empresa que etuda BigData
+Para distribuir 14M de encomenda diarias por 200 paises, eles utilizam big data
+Utilizado para otimizar a forta de quase 100k veículos,
+Analisando performance
+Ex: foi analisado que deve-se evitar curvas a esquerda
+
+
+
+----- Diferença entre SQL e NoSql -----
+
+Em meados dos anos 2000, grandes empresas viram aumento nos tráfegos, SQL não conseguia escalar bem
+AMAZON -> SimpleDB
+Google -> Big table
+Termo se popularizou por #NoSQL no twitter
+NoSQL -> Flexibilidade (não precisa de esquema)
+
+Schema-less -> pode receber qualquer JSON (Aplicação deve ter cuidado para receber um JSON bem formatado)
+
+Escalabilidade:
+- Vertical: aumentar o hardware do servidor (HD, memória, processador...)
+- Horizontal: aumenta-se o número de máquinas/servidores (BD Relacionais inicialmente não foram projetados para isso)
+
+Quando se utilizar banco de dados relacional: Sistemas ERP
+
+Banco de Dados NoSQL surgiram para suprir necessidades de grande volume de dados.
+
+MongoDB -> Não relacional mais utilizado
+Redis -> chave e valor
+
+Teorema CAP:
+Trata das decisões de trade-off, diz que é impossível para um sistema WEB disponibilizar três requisitos principais: 
+- Consistência: Cada leitura recebe as leituras mais recentes ou um erro, valor atual. Todos os nós (servidores) leem os mesmos valores de forma linear;
+- Disponibilidade: Cada solicitação sem falha deve retornar uma resposta;
+- Tolerância de partição: Dados são particionados em rede (kluster)
+
+
+
+
+----- Variações entre BD NoSql -----
+
+
+Tipos de sistemas: 
+CA (Consistency and Availability): Não lidam com erros, forte conscistência;
+CP (Consistência e Particionamento): Abre mão da disponibilidade, só salva dados ao todos os bancos salvarem (BD não relacionais);
+AP (Disponibilidade e Particionamento): O sistema responderá caso falha na comunicação, porém com dados desatualizados (BD não relacionais);
+
+Consistência Eventual: Dependendo da consulta retorna um tipo de dado;
+Tolerância a prtição: Abrir a mão da linearização - usuário trabalham com BD diferentes que fazem mesclas de dados, que quando se interrompem a aplicação deve continuar;
+
+Forte consistência - ACID
+Atomicidade: Na transação se faz tudo ou nada, não existe meio termo
+Consistência: Antes e após transação o banco deve se manter consistente
+Isolamento: Nenhuma transação deve ser interferida por outra até ser completa
+Durabilidade: A informação no banco deve se permanecer imutável até alguma atualização
+
+Consistência eventual - BASE
+BA (Basically Avaible): Disponibilidade é a prioridade
+S (Soft-safe): não precisa ser sempre constante
+E (Eventually Consistent): a consistência nem smepre é mantida em todos os dados
+
+--- Variações de armazenamento NoSQL:
+- Documentos: MongoDB
+Informações no formato semelhante a JSON (JavaScript Object Notation)
+Números, datas, lista de valores
+Collections
+Tipos de dados: Null, Boolean, Number, String, Onject, Array
+BSON - Binary JSON (Suporta ObjectID, MinKey, MaxKey, Timestamp, BinData Binário, Date UTC e Expressões regulares)
+Porque utilizar: Familiriaridade ao dev...
+Como Relacionar os dados: Referência (Chave extrangeira), Documentos imbutidos (Todas referências dentro de um documento)
+
+- Colunar: Cassandra
+Criado no Facebook para o recurso de pesquisa
+Divide os dados por partições e divide em vários nós
+Colunas vázias não ocupam espaços
+Todos os servidores são criados iguais (sem lider)
+Trabalha com nós
+Consistência conforme as replicas
+Sem JOINS
+Muitos dados em uma tabela
+Netflix utiliza
+
+- Graficos: Neo4j
+Orientado a grafos
+Linguagem Cypher
+Match - select
+m - alias
+Nós e Relacionamentos são blocos básicos
+Nós são as linhas
+Dois nós podem ser conectados com um ou mais relacionamentos
+Não armazena apenas as informações sobre entidades, mas também seus relacionamentos
+Caso de uso: Mecanismo de recomendação e Detecção de fraudes
+
+- Chave e valor: Redis 
+Atribuir um valor a uma chave
+Mantém seu banco inteiramente na memória
+Utilizado em armazenamendo em cache, fila de mensagem, dados de curta duração
+
+---
+
+Em sistemas distribuídos pode se utilizar mais de um tipo de armazenamento - Poliglota
+
+
+
+
+----- Mexendo com base NoSql -----
+
+--- Desenvolvimento NoSQL com padrões
+
+- Padrão de aproximação: 
+Visa diminuir a escrita em banco de dados
+Espera um volumes de eventos ocorrer para gravar
+Quando não se precisa de dado exato no momento da consulta
+Prós: Menor gravações em bancos, Mantem números estatisticamente válidos
+Contras: Números não exatos, implementação no aplicativo
+
+- Padrão Atributo:
+Visa diminuir indices e campos de busca
+Transforma-se as informações em matriz de pares de valor e chave
+Indexação gerenciável
+Útil para documentos grandes com muitos campos semelhantes para consulta
+Prós: São necessários menos indices e consulta mais simples de se escrever
+Contras: Não atribuir ao conjunto correto que não faz sentido ser agrupado em um atributo só
+
+- Padrão Balde - Bucket:
+Economia de tamanho de índice
+Agrupamento de dados por período de tempo
+ótima solução para dados de streaming
+Prós:
+- Reduz o número de documentos;
+- Melhora o desempenho do índice
+- Simplifica o acesso a dados
+
+- Padrão Computed:
+Deve ser usado quando se tem mais leitura do que gravações
+Se faz inserção por período
+Prós: Redução da CPU para calculos, consultas mais simples
+Contras: Dificil de identificar a necessidade, Uso excessivo deve ser evitado ao menos que necessário
+
+- Padrão documento padrão
+Altamente regulamentado
+Exige versão específica do conjunto
+Prós: Fácil de implementar, Nenhum impacto de desempenho
+Contras: Dobra número de gravações, Consultas precisam ser direcionadas corretamente
+
+- Padrão Referência extendida (mais utilizado):
+Se uma entidade pode ser pensada como algo separado, geralmente faz sentido ter uma coleção separada
+Incorporamos os campos de prioridades e acessados com amior frequência
+Joins é o que mais pesa na consulta (geralmente)
+Para atualizar, a duplicação de dados pode mantes histórico
+Prós: melhor desempenho quando há muitos joins
+Contras: Duplicação de dados
+
+- Padrão Atípico - Outlier:
+Sistemas de recomendação, interesses semelhantes
+Dentro da coleção salva quem fez ações nela
+Prós: Impede que alguns documentos ou consultas determinem o padrão do app, consultas para caso de uso comunm
+Contras: Muitos do padrões são feitos no código do app
+
+- Padrão Poliformico:
+Útil quando temos variedades de documentos muito similares entre si e precisam ser mantido na mesma coleção
+Facilita consultas
++performance
+Atributos diferenciando cada tipo
+Serve para embedados
+Prós: Facil de implementar, Consultas na mesma coleção
+Contras: App deve tratar os dados que vem do BD
+
+- Padrão Versionamento de Schema:
+Quando adiciona uma propriedade ao altera o Schema
+Prós: Não é necessário tempo de inatividade, Controle de migração, Redução de divida técnica futura
+Contras: Pode precisar de dois indices para o mesmo campo na migração
+
+- Padrão subconjunto - Subset:
+Armazenamento em conjuntos (maior frequência...)
+Reduz consumo e tempo das consultas
+Prós: Redução do working set, Menor tempo de acesso ao disco
+Contras: Deve-se gerenciar o subconjunto, extração de dados adicionais requer buscas adicionais
+
+- Padrão Árvore
+Não precisa fazer joins
+Dados de estrutura hierarquica
+Prós: maior desempenho
+Contra: Atualizações precisam ser gerenciadas no app
+
+--- Consultas em MongoDB
+insertOne() 
+insertMany()
+insert()
+find()
+findOne()
+findOneAndDelete()
+findOneAndReplace()
+findOneAndUpdate()
+updateOne()
+updateMany()
+update()
+deleteOne()
+deleteMany()
+remove()
+
+
+
+
+
+----- API REST x GraphQL -----
+
+REST - Relational State Transfer: 
+Usa protocolos http
+utiliza formatos como: JSON, XML, HTML...
+Cada recurso rest é representado por um end point
+Só entrega o que precisamos se criarmos um end-point para isso
+
+GraphQL - Graph Query Language
+Facebook criou quando desenvolvia os app móveis
+Com rest, encontrava os seguintes problemas: desempenho ruim, muitos endpoints, retorno excessivo ou insuficiente dos dados, alteração no endpoint a cada requisição, dificuldade de entender as APIs
+usado para definir dados necessários
+Mutation: update, delete...
+É necessário configurar os ambientes para utilizá-lo
+Possui fake API para testes

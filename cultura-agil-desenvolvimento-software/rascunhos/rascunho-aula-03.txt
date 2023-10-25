@@ -1,0 +1,68 @@
+----- SCRUM -----
+
+Definição: Framework para pessoas resolverem problemas complexos e entregar produtos de maior valor possível.
+
+- Leve
+- Fácil de entender
+- Difícil de dominar
+
+Pilares: Transparência - inspeção - adaptação
+
+Transparência: Deve saber com clareza o que irá fazer com as opções disponíveis, tomadas de decisões com informações
+Inspeção: Aplicar uma visão crítica sob as coisas (saber o que irá acontecer)
+Adaptação: Evolução e melhoria contínua
+
+Valores: Coragem - Foco - Abertura - Respeito - Compromisso
+
+Compromisso: Um time onde todos estão comprometidos com o mesmo objetivo
+Coragem: colocar opiniões na mesa
+Foco: Bom direcionamento, fazer pequenas coisas e certas
+Abertura: Processo de aprendizado contínuo, ter abertura para fazer críticas
+Respeito: Ter respeito dentro da equipe
+
+Papéis: Scrum Master - Product Owner - Dev Team
+
+Scrum Master: Responsável por garantir que o SCRUM foi entendido e está sendo praticado
+Product Owner: Construir um backlog (lista de afazeres) priorizado e transparente
+Dev Team: Autogerenciável - Multidisciplinar - Sem rótulos - Sem sub times - Prestação de contas com o time todo
+
+Tamanhos de time: 
+< 3 muito pequeno
+> 9 muito grande para gerenciar
+PO e SM só contam se eles puxam as tarefas (Estão fazendo tarefas)
+
+Artefatos:
+
+- Product Backlog: Todas as tarefas do projeto, Produto em desenvolvimento (Topo da lista: mais refinados; Final da lista: menos refinados e menos clareza dos afazeres)
+- Sprint Backlog: subconjunto para a iteração
+
+Cerimônias:
+- Panning: Planeja-se os itens que serão desenvolvidos;
+- Daily Scrum: 15min por dia para entender o que cada estava e vai fazer e identificar bloqueios;
+- Retrospective: Reunião dos membros do time tentam entender transparência, inspeção e adaptação do processo;
+- Review: Apresenta para os stakeholders o que foi desenvolvido.
+
+
+
+
+----- Kanban -----
+
+visual.card - kan.ban
+
+- Visualize o trabalho 
+- Limite o trabalho em progresso
+- Foco no fluxo
+- Melhoria contínua
+
+Retro Kanban
+
+- Tem algum WIP escondido??
+- Tem algum gargalo?
+- Tem a granularidade certa?
+
+WIP: Work in Progress (um para cada dev);
+Blockers: Tarefa pode não caminhar por bloqueio;
+Throughput: Vazão de cards a entregar (fluxo)
+Lead Time: Tempo que o item demora para passar pelo board
+
+

@@ -1,0 +1,27 @@
+JOIN (Inner Join): 
+- são usados para juntar dados de uma ou mais tabelas em um único resultado
+
+VIEW: 
+- uma exibição, tabela virtual, baseada em uma consulta sql criada a partir das tabelas da base. Irá recriar os dados a cada vez que rodar.
+- Aplicações: Serve para simplificar o acesso a dados que estão em múltiplas tabelas relacionadas, implementa segurança nos dados (limitando dados acessados, provendo isolamento)
+- Executa toda vez o comando na base para exibir o resultado
+
+VIEW MATERIALIZADA:
+- Tem uma tabela temporária preenchida (muito mais rápida)
+
+Arquivo de configuração do banco PostGreSQL: postgresql.conf
+Variáveis importantes:
+- shared_buffer: Configura espaço de memória utilizado para cache (Recomendado: 15% a 25% da RAM da máquina)
+- work_mem: Quantidade de memória dedicada a operações como ordenação (Recomendado: 25% de RAM / max_connections)
+- maintenance_work_mem: Memória dedicada a manutenção (Recomendado: 5% do total de RAM)
+
+Site para tunar o Banco: https://pgtune.leopard.in.ua/#/
+
+Arquivo de configurações de segurança: pg_hba.conf
+
+Comando Backup: 
+"C:\Program Files\PostgreSQL\15\bin" -h %3 -p 5432 -U postgres -F c -b -v -f %1 %2
+
+%3 -> host
+%2 -> local onde será salvo o arquivo .dump
+%1 -> nome do banco 

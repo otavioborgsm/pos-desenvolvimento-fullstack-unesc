@@ -1,0 +1,23 @@
+----- NEXT-JS -----
+Benefícios:
+- Image Optimization: Componente chamado <Image> e com sua renderização por processador consegue balancear os gastos de processamento - Define altura e largura e otimiza;
+- Internacionalization: Pode fazer por diversas configurações a tradução e automação de tradução;
+- Next.js Analytics: integração com sistemas de análise;
+- Zero config: vem pronto para uso;
+- Hybrid (SSG and SSR): Server side e Pre-render
+- Incremental Static Regeneration: Pode gerar uma página estática e depois gerar conteúdo nela
+- TypeScript Support: Suporte automático ao TypeScript
+- Fast Refresh: Ao escrever o código ele já atualiza a página no navegador
+- File-system Routing: Organiza as rotas pelas pastas do projeto
+
+Tem embutido nele um servidor Http
+
+getStaticPaths + getStaticProps limita a possibilidade de páginas de um ID (estática)
+
+npm run build -> Faz o build
+
+npm run start -> Sobe a aplicação
+
+npm run export -> Exporta a aplicação em formato de páginas estáticas
+
+

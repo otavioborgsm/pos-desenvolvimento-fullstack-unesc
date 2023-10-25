@@ -1,0 +1,15 @@
+Server-side-render:
+Cada página é gerada no servidor
+Cada página individual
+Armazena o código necessário para montar a página para o cliente
+
+Single-page-application:
+visualização é gerada no lado do cliente
+HTML extremamente enxuto
+Indexação prejudicada
+Carregamentos mais leves dos conteúdos
+Vai baixando cada parte necessária
+
+URL é a fonte de informação para saber em qual página estamos
+
+Use effect -> Atualiza a tela a partir do DOM virtual

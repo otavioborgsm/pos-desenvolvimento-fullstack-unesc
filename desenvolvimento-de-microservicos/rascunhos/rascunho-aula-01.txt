@@ -1,0 +1,149 @@
+
+----- MONOLITICO -----
+
+Aplicação monolítica é aquela que possui nela ligações da interface, regra de negócio e acesso aos dados.
+Alto acoplamento e baixa coesão
+Banco de dados único
+
+
+Deploy:
+
+Vários desenvolvedores trabalhando na mesma base de código, fazendo construções.
+Toda correção feita deverá passar por todos os passos novamente
+
+Contrução -> testes -> entrega
+
+Gera um arquivo compactado (exe, jar, apk, war...)
+
+
+Benefícios: 
+
+ - Fácil de desenvolver;
+ - Fácil de testar;
+ - Simples de implementar;
+ - Custo inicial menor.
+
+
+Desafios:
+ - Manutenção (Se muito complexo difícil de fazer alterações rápidas);
+ - Build (Refazer a cada alteração);
+ - Confiabilidade (Bug em qualquer módulo pode derrubar um processo);
+ - Efetuar Grandes Mudanças.
+
+
+
+
+----- MICROSSERVIÇOS -----
+
+Arquitetura de Microsserviços:
+
+Pequenos serviços que se comunicam bem por meio de APIs, pertencendo a pequenas equipes autossuficientes.
+Deve envolver uma área de domínio de conhecimento. Buscando alta coesão e baixo acoplamento.
+
+Topologia:
+ - Uma porta de entrada/saída de dados;
+
+Um banco para cada microsserviço para eles serem independentes.
+Vário microsserviços com um banco de dados são na verdade um Monolito Distribuído
+
+Comunicação:
+ - Um pra um (cada solicitação é processada por um único serviço);
+ - Um para muitos (Cada solicitação é processada por vários serviços).
+
+Comunicação Síncrona: Trava o usuário até conseguir a resposta;
+Comunicação Assincrona: Não bloqueia o usuário.
+
+Evitar comunicação síncrona
+
+Message Broker faz a ligação e troca de mensagens entre os microserviços.
+
+Microsserviço A não deve acessar diretamente a base do Microsserviço B
+
+Consistência Eventual (normalmente com eventos de integração)
+
+Guarde apenas os dados necessários para um funcionamento desacoplado.
+
+
+Banco de dados:
+Bancos de dados separados oferecem benefícios, sendo eles: 
+ - Os dados necessário no serviço ficam emcapsulado nele;
+ - O esquema de dados pode evoluir sem afetar os outros serviços;
+ - Cada armazenamento pode ser dimensionado de uma forma;
+ - Uma falha em uma parte não afeta o sistema todo.
+
+
+Resiliência:
+ - Escalar de maneira desacoplada;
+ - Se um deles para, pode se disponibilizar uma instância do mesmo de forma homogênea e rápida;
+ - Para subir um serviço a um servidor é necessário instalar as dependencias no mesmo;
+ - Docker: Permite empacotar os executáveis com as dependencias da máquina original, importante para funcionar em todos os ambientes de forma igual.
+ - Load Balancer: aciona um servidor reserva de maneira automático caso algum caia;
+ - Circuit Breaker: Fecha ligação com sistemas problematicos;
+
+API Gateway:
+ - Serve para unificar as requisições dos microsserviços, linha de frente das requisições, autenticando, autorizando, lidando com log e cache, reduzindo requisições;
+ - Trade-off: Ponto de falha. Se cair, perde o acesso aos microsserviços;
+ - Backend for Frontends (BFF): Uma Gateway para cada front (mobile, web, public api...), diminuindo ponto de falha.
+
+
+Beneficios:
+ - Permite entrega e implementação continua de aplicativos grandes e complexos;
+ - Melhor testabilidade;
+ - Melhor capacidade de implementação;
+ - Permite separar o esforço do desenvolvimento em várias equipes;
+ - Equipes pequenas;
+ - Menor equipe, melhor colaboração;
+ - Cada microserviço é relativamente pequeno;
+ - Mais fácil para o dev entender o todo;
+ - Melhor isolamento de falhas.
+
+
+Deploy:
+ - Pequenas equipes desacopladas;
+ - Construção -> testes -> entrega;
+ - Equipes desacopladas entregam serviços desacoplados.
+
+
+Desafios: 
+ - Os devs devem lidar com a complexidade de criar um sistema distribuido;
+ - As IDEs são orientadas a criar aplicações monoliticas;
+ - Deve-se implementar um Message Broker;
+ - Complexidade operacional.
+ - Falacias (rede confiável, latência zero, largura de banda infinita, rede é segura, topologia não muda, existe apenas um adm, o custo de comunicação é zero, a rede é homogênea).
+
+
+Buscamos Escalabilidade, crescer o sistema (dados, etc) sem afetar o usuário.
+Pode ser configurado pela cloud
+
+Escalabilidade vertical: Aumentar o hardware do servidor, não tolerante a falhas;
+Escalabilidade horizontal: adiciona-se mais servidores e distribui-se as requisições neles por meio de load balancer, que lê os cabeçalhos das requests e usa essa informação para fazer a distribuição.
+
+
+
+----- API -----
+
+API (Application Programming Interface)
+
+
+WEB Services SOAP:
+1 - registra os recursos que possui num WSDL (Web Service Description Language)
+2 - Busca o webservice
+3 - recebe URL para acesso dos recursos
+4 - solicita WSDL
+5 - responde WSDL
+Toda mensagem deve conter um envelope, header não é obrigatório mas quando usado é o primeiro, body necessário e é onde contem as informações a serem transportadas (document payload), e dentro do body poderemos ter o fault que é utilizado para carregar status.
+
+API REST:
+Representational State Transfer, fornecem padrões para que sistemas se comuniquem utilizando os protocolos HTTP.
+O cliente pode consumir os recursos definidos num endpoint por meio ods protocolos HTTP.
+
+API REST x GraphQL
+GraphQL visa substituir vários gateways em apenas um ambiente de execução visando entregar apenas o que o cliente solicita e nada além.
+
+GraphQL:
+Graph Query Language é uma linguagem de query para definir os dados para API ou servidor. Tornando as consultas em API semelhante as Schemas.
+Mesmo sendo mais visado para consultas, é possível fazer alterações e deleções via mutations.
+Ao substituir um Gateway por um servidor GraphQl será possível extrair dados de diversas fontem com apenas uma request.
+Versionamento fica desnecessário pois se pode adicionar campos e tipos sem alterar as consultas.
+
+

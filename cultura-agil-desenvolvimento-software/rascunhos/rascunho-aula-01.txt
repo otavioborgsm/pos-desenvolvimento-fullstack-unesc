@@ -1,0 +1,232 @@
+----- Introdução ao conceito ágil -----
+
+17 pessoas se reuniram em um resort, em 2001, para discutir como era criado us software naquela época então surgiu o Menifesto Ágil.
+- agilemanifesto.org
+
+Alguns dos principais nomes:
+Kent Beck - EXP
+Alistar Cockburn - Cristal
+Ward Cunningham - Wik
+Martin Fowler - refatoração
+Andrew Hunt e Dave Thomas - Pragmatic Programmer
+Ron Jeffries - Coach EXP
+Robert C. Martin - Uncle Bob
+Ken Schwaber - Scrum
+Jeff Sutherland - Scrum
+
+
+4 Valores do Manifesto Ágil:
+
+- Indivíduos e interações mais que processos e ferramentas;
+- Software em funcionamento mais que uma documentação abrangente;
+- Colaboração com um cliente mais que negocioação de contrato;
+- Responder a mudanças mais que seguir um plano.
+
+
+Principios:
+
+- Nossa maior prioridade é satisfazer o cliente através da entrega contínua e adiantada de software com valor agregado;
+- Mudanças nos requisitoas são bem-vindas, mesmo tardiamente no desenvolvimento. Processos ágeis tiram vantagem das mudanças visando vantagem competitiva para o cliente;
+- Entregar frequentemente software funcionando, de poucas semanas a poucos meses, com preferência à menor escala de tempo;
+- Pessoas de negócio e desenvolvedores devem trabalhar diariamente em conjunto por todo o projeto;
+- Contrua projetos em torno de indivíduos motivados. Dê a eles o ambiente e o suporte necessário e confie neles para fazer o trabalho;
+- O método mais eficiente e eficaz de transmitir informações para e entre uma equipe de desenvolvimento é através de conversa face a face;
+- Software funcionando é a medida primária de progresso;
+- Os processos ágeis promovem desenvolvimento sustentável. Os patrocinadores, desenvolvedores e usuários devem ser capazes de manter um ritmo constante indefinidamente;
+- Continua atenção à excelência técnica e bom design aumenta a agilidade;
+- Simplicidade (a arte de maximizar a quantidade de trabalho não realizado) é essencial;
+- As melhores arquiteturas, requisitos e designs emergem de equipes auto-organizáveis;
+- Em intervalos regulares, a equipe reflete sobre como se torna mais eficaz e então refina e ajusta seu comportamento de acordo.
+
+
+
+----- Motivação as práticas ágeis -----
+
+1970: Seguia-se a organização de cascata: Requisitos de sistema -> Requisitos de Software -> Análise -> Design do Programa -> Programação -> Testes.
+
+Qualquer passo mal elaborado afetava o outro.
+
+Hoje em dia tudo interage com um software.
+
+Green field: Poderá decidir tudo em relação a contrução do software (arquitetura, LP, testes...);
+Brown field: Pega um projeto em andamento ou pronto para trabalhar.
+
+Restrição Tripla (escolherás três entre as opções):
+- Bom
+- Barato
+- Rápido
+- Concluído
+
+Usa-se a saída de uma iteração para calcular uma implementação
+
+Funcionalidades aplicadas conforme valor agregado
+
+Nível de qualidade é mantido o mais alto possível
+
+Cronograma é principalmente gerenciado conforme manipulação do escopo
+
+A metodologia ágil não é um processo, não é modismo e não é somente um conjunto de regras. Pelo contrário, a agilidade é um conjunto de direitos, expectativas e disciplinas do tipo que alicerça a base de uma profissão ética.
+
+
+
+
+----- Praticas de mercado de nogócio -----
+
+-- Planejamento --
+ - Estimativa: Quanto tempos acreditamos levar para entregar algo;
+   - Planning Poker (Cartas com Fibonacci) / dedos / p-m-g (tamanho camiseta)
+   - Spike
+ - Histórias de usuário
+ - Velocidade: Qual a velocidade do time (Não meta, autoconhecimento)
+ - Iteração zero
+ - Ferramentas: 
+   - Jira
+   - Trello
+
+-- Pequenas versões -- 
+Objetivo entrega contínua
+
+-- Testes de aceitação -- 
+ - Automatizados
+ - BDD: Entrega conforme comportamento
+   - Dado, Quando e Então
+
+-- Equipe como um todo --
+Todo mundo faz parte da equipe (Stakeholders)
+O software é o meio
+Estudo de valores agregados e complexidades com outras áreas da empresa
+
+
+
+
+----- Prática de times -----
+
+-- Metáfora --
+
+Consiga definir formas de se comunicar entre time (negócio, mercado do projeto) para melhor desenvolvimento do Software.
+Ligações lógicas com assuntos comuns.
+
+-- Ritmo sustentável --
+
+Correndo maratona
+Responsabilidade do time tentar manter o ritmo sustentável
+Quanto melhor coordenado, melhor resultado
+
+-- Propriedade Coletiva --
+
+Uma pessoa não pode ser responsável por uma parte do código
+Compartilhar padrões e mante-los (identifica-los caso não saiba)
+
+-- Integração Contínua -- 
+
+Prática de sempre juntar a base de código
+Cuidado para não quebrar o código do colega
+
+
+
+
+----- Práticas de programação -----
+
+-- TDD --
+
+Desenvolvimento orientado a testes
+
+- Não escrever nenhum código de produção antes de elaborar um teste que falhou devido à falta desse mesmo código
+- Não escrever mais testes do que o suficiente
+- Não escrever mais código do que o suficiente
+
+Vermelho / Verde / Refactor (Ao funcionar o código, reescrever de forma melhor)
+
+-- Refatoração --
+
+Não só refatoração de tdd, também em busca de melhores resultados para o projeto
+Reorganizar pastas
+reorganizar funções 
+Cuidados para não repetir código
+
+-- Design Simples --
+
+Não fazer over enginnering
+
+Simplicidade 
+
+Tomar decisões mais simple possíveis
+
+-- Programação em dupla --
+
+Pair Programming
+Maneira de compartilhar conhecimento e trabalhar mais focado
+
+Dois desenvolvedores para resolver um problema
+
+Não precisa ser 100% do tempo
+
+
+
+
+----- Versionamento de código -----
+
+-- Git --
+
+Free
+Open Source
+Sistema de controle de versão
+
+Ferramentas git:
+GitHub
+BitBucket - criadores do jira
+GitLab - plataforma para DevOps
+SourceTree - ferramenta para visualizar árvore de commits
+Conventional Commits - Como dar nome aos commits
+Conventional Comments - Comentar pull requests
+
+GitFlow: 
+ - Branch Principal -> main (ou master)
+ - Brach de development para começar a desenvolver que receberá os PR das tarefas
+ - abrir branch de release para fazer testes e publicar em produção
+ - branch de hotfits para realizar correções de bug em produção
+ - manter tudo sincronizado
+
+Trunk-based development flow:
+ - integração contínua
+ - Feature flags (Adiciona uma nova função ao código main mas deixa desabilitado para o cliente, serve para fazer integração do código)
+
+semver.org
+
+
+
+
+----- Integração continua -----
+
+Começa com o dev -> manda o trabalho para uma ferramenta de controle de código -> Build da aplicação -> Testes automatizados -> Relatório com base nos testes -> Fazer entrega do código
+
+Com todo esse processo automatizado o desenvolvedor se sentirá cada vez mais confiante.
+Caso contrário, o desenvolvedor irá evitá-lo pelas dificuldades
+
+Um processo rápido, caso ocorra um erro, o código ainda está fresco na cabeça do dev para fazer o reparo
+
+Versionamento semantico: 3 números 2.5.0 (Mayor, Minor, Patch)
+
+- Mayor: Versão anterior não é mais compatível
+- Minor: Nova feature
+- Patch: correção de algo pequeno
+
+
+
+
+----- MVP -----
+
+Produto Mínimo viável - Minimum Viable Product
+
+Construção - mensuração - aprendizado
+
+O produto mínimo deve ser viável
+
+Não adianda focar no viável e esquecer o mínimo
+
+Para validar ideias não se precisa desenvolver tudo
+
+
+
+
+

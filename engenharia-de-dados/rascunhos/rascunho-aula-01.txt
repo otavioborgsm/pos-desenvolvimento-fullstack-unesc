@@ -1,0 +1,43 @@
+Banco de dados Relacionais:
+ - Fundamentos e modelagem de dados
+ - Arquitetura lógica e organização lógica dos dados
+ - Linguagem SQL
+
+BD não relacionais:
+- Visão geral de cloud computing;
+- Diferença de bancos relacionais e não relacionais
+- Variações entre bases NoSQL
+- Instalação
+- BigData, Filas, e GraphSQL
+
+SGBD:
+- Definição: Especificar tipos, estruturas e restrições dos dados armazenados (Metadados);
+- Construção: processo de armazenar os dados em algum meio;
+- Manipulação: função de consulta, recuperação de dados, atualização de dados refletir mudanças do mundo real;
+- Compartilhamento: Usuários e programas compartilham um banco de forma simultânea.
+
+PostgreSQL:
+- SGBD que começou como projeto na Universidade de Berkeley por Michael Stonebraker;
+- Primeira versão lançada em 1997;
+- Escrito em C;
+- Possui todos os requisitos de um BD tradicional, compatível com ACID (Atomicidade, Consistências, Isolamento, Durabilidade);
+- Fácil de usar;
+- Seguro;
+- Poderoso, confiável e rápido;
+- Conexão feita por rede TCP/IP;
+- Tamanho máximo BD: ilimitado;
+-        ||      Tabela: 32 TB;
+-        ||      Linha: 1,6 TB;
+-        ||      Campo: 1 GB;
+-        ||      Linhas ou índices por tabela: ilimitado;
+- Máximo de colunas por tabela: 250 a 1600 dependendo do tipo.
+- Segue termos acadêmicos por ter sido projetado em uma
+
+SQL significa Structure Query Language
+
+Comandos DML: INSERT, DELETE, UPDATE SELECT e LOCK (precisam de commit)
+Comandos DDL: CREATE TABLE, CREATE INDEX, ALTER TABLE, DROP TABLE, DROP VIEW e DROP INDEX (Não precisam de commit)
+Comandos DCL: COMMIT, ROLLBACK, GRANT e REVOKE (Controlam acesso)
+
+Diagrama ER:
+Tipo de fluxograma que ilustra como as entidades se relacionam

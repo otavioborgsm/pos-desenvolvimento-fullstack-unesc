@@ -1,0 +1,10 @@
+MERN: MONGO - EXPRESS - REACT - NODE
+- Todas as camadas da aplicação com JavaScript
+
+InfoQ: portal de notícias sobre programação;
+
+Technology Radar: https://www.thoughtworks.com/en-br/radar
+
+Podcast - Hipsters Ponto Tech: Podcast de Tecnologia;
+
+Martin Fowler - Ator referência em arquitetura

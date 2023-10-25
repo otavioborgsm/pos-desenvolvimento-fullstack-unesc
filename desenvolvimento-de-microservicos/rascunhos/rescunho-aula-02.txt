@@ -1,0 +1,28 @@
+Arquitetura API com NestJS
+
+APP.Module: Utilizado para importar módulos
+
+Module dos componentes: provém componentes da api
+
+Controller: lida com as requisições
+
+Service: controla as regras de negócio
+
+npm run start:dev
+
+.env dados:
+
+PORT=3000
+MONGODB_URI=mongodb+srv://usuario:senha@url/?retryWrites=true&w=majority
+JWT_KEY=
+JWT_EXPIRES=24h
+
+----- -----
+
+Aplicativo monolito: trabalha na mesma base e utiliza a mesma memória 
+
+Aplicativo Micro Serviços utiliza memórias separadas
+
+monorepo: App microservices na mesma base de código
+
+consistência eventual: alteração de dados que afeta outro microsserviço

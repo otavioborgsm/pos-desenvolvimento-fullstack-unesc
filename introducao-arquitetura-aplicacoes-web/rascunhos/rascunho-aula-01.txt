@@ -1,0 +1,68 @@
+---- Arquiteturas de aplicações web -----
+
+- O que é:
+Importantes decisões que definem o caminho da aplicação
+
+Responsabilidades do arquiteto:
+- Tomar decisões de arquitetura;
+- Analisar de forma contínua a arquitetura;
+- Manter-se atualizado com as últimas tendências;
+- Garantir que as decisões são seguidas;
+- Diversificar conhecimento;
+- Ter conhecimento da lógica de negócio;
+- Possuir habilidades interpessoais;
+- Entender e navegar em política.
+
+Características de um arquiteto:
+
+Disponibilidade - deve deixar o software funcionando no momento necessário;
+Confiabilidade - Se o sistema faz suas requisições da maneira correta;
+Testabilidade - Maneiras de teste;
+Escalabilidade - Saber trabalhar com as demandas de usuários;
+Segurança - Segurança dos dados;
+Agilidade - se a arquitetura disponibiliza uma agilidade de programação;
+Tolerância a falhas - Sistema que se comporta com falhas;
+Elasticidade - Mudar o tamanho dos recursos conforme as demandas;
+Recuperação - Recuperar-se de falhas;
+Performance - Velocidade, tempo de resposta; 
+Entrega/Implantação - Deploy, disponibilizar o sistema;
+Aprendizado - Arquitetura fácil de se aprender e se seguir;
+
+
+- Big Ball of Mud
+Arquitetura com mistura de tudo, só que mal feito
+
+Computador -> Cliente/Servidor
+
+Estilos de Arquitetura
+
+Monólito: Apenas uma aplicação;
+- Menos complexidade;
+- Implementação única;
+
+Distribuído: Aplicações separadas;
+- Implementações separadas;
+- Não devem se depender entre si;
+
+Arquitetura em camadas: Dividir a arquitetura em camadas;
+- Ex: Apresentação - negócio - banco de dados
+
+Microsserviços: 
+- Cada serviço fica separado;
+- Desenvolvimento separado;
+- Arquitetura complexa;
+
+----- STACKS -----
+
+- MongoDB:
+Orientado a documentos;
+NoSQL;
+
+- NodeJS:
+JS Runtime;
+Executar JS fora do navegador;
+
+- NPM
+Gerenciador de pacotes do node;
+
+

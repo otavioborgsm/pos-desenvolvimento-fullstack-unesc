@@ -1,0 +1,88 @@
+----- Linha do tempo -----
+1950: Primeiros Programas;
+1960: Arpanet (conceito que deu início a internet);
+2003: SRE - Site Rentability Engineering (traz métricas para gerenciar a rentabilidade de uma aplicação);
+2009: Início do conceito de DevOps;
+2017: Adoção em escala.
+
+
+
+----- Bases do DevOps -----
+Profusão de metodologias;
+Modelos baseados em processos produtivos;
+Agilidade.
+
+- O Projeto Fênix (Livro)
+
+- Entregas devem ter qualidade
+
+Entrada -> Processamento -> Saída (Sistema)
+
+
+
+----- Integração contínua CI/CD -----
+Continuous Integration / Continuous Delivery
+
+Desenvolvimento, teste e deploy integrado
+Infraestrutura, dados e segurança também
+
+DevOps
+Development / Operation
+
+Desenvolvimento com operacionalização
+
+Mantra:
+DevOps é a união de pessoas, processos e produtos para permitir a entrega contínua de valor aos nossos usuários finais.
+
+
+
+----- Ferramentas de integração contínua -----
+-- Desenvolvedores
+-- Versionamento (Git) - Controle de código fonte
+Irá disparar o CI/CD após check-in no código 
+-- Ambiente de disponibilidade (Nuvem, servidor)
+Distribuição da aplicação
+-- Servidor de integração contínua (Ex: Jenkins...)
+Inicia automaticamente build e testes, incluindo testes funcionais, segurança e performance
+-- Contâiners (Ex: Docker)
+Só utiliza recursos necessário para a aplicação. Faz o upload em um repositório de artefatos ou container para registro e controle.
+
+
+
+----- Etapas da integração contínua -----
+Planejamento - Código - Build - Test - Release - Deploy - Operate
+
+
+
+----- Características do Git -----
+Suporte consistente para desenvolvimentos não lineares
+Desenvolvimento distribuído
+Compatibilidade com protocolos/sistemas existentes
+Manipulação eficiente de projetos extensos
+Autenticação criptográfica do histórico
+Modelo baseado em ferramentas
+Estratégias de mesclagem (merge) interconectada
+É necessário controlar o lixo
+Empacotamento periódico explícito de objetos
+
+
+
+----- Jenkins -----
+Servidor de integração contínua
+Permite que crie trabalhos e pipelines controlados por etapas, integrando os processos
+Uma pipeline contem sequências, estágios e dados necessários do build
+Cada estágio pode se programar uma próxima ação ou ação de erro
+Possuem agentes para rodar as ações separadamente
+
+- JaCoCo: Extensão para controle de testes, controle de cobertura e qualidade do código
+
+CodeCoverage: testes unitários.
+
+
+
+----- OPS ----
+SecOps: Operações de segurança;
+TestOps: Operações de testes;
+GitOps: Operações de versão de código;
+DataOps: Operações de dados.
+

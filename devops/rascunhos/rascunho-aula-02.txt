@@ -1,0 +1,58 @@
+----- DOCKER -----
+
+Docker é uma implementação de containers.
+Porções menores de uma aplicação ou serviço.
+
+Vantagens: custo, performance, escalabilidade, isolamento...
+
+Docker é diferente de máquina virtual.
+
+Virtual Box: Software de Máquina Virtual.
+
+Docker: 
+Implementa camada de Container Engine
+O SO fica enxuto no engine
+Consome menos
+Possibilita utilizar aplicações de SO único em outra máquina
+Não precisa calcular a quantidade de processamento que o SO consome
+Container fica com as configurações necessárias para rodar a aplicação
+O foca vira a aplicação
+O custo da aplicação fica menor, por consumir menos recursos
+
+- DockerFile:
+Especifica a estrutura do container
+Estrutura de texto que informa o que é necessário
+É compilado e gera uma imagem que se torna o container 
+Questões de vulnerabilidade do SO são cuidados pelo container
+Proporciona GitOps
+
+- Orquestração: 
+Gerenciar da melhor forma possível serviços diferenciados
+Tem que haver orquestração dos container (recursos...)
+
+- Docker Hub: serviço que disponibiliza containers
+- Digital Ocean
+
+- Docker Compose:
+
+
+
+
+----- JENKINS -----
+
+Orquestra Git, Docker, Kubernetes
+Deploy, CI, Integração contínua
+
+Permite flexibilidade
+
+Feito em Java
+
+Pipeline faz automatização do CI dos projetos
+
+Kubernetes faz o gerenciamento dos containers
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+- Mantra do DevOps:
+
+DevOps é a união de pessoas, processos e produtos para permitir a entrega contínua de valor aos nossos usuários finais.
+
+
+----- Kubernetes ----- 
+
+Publicação dos containers
+
+É necessário criar credenciais
+
+-----
+
+O uso de processos automatizados impulsionou a criação de outras áreas
+
+- TestOps: trazer a realização dos testes de forma automatizada
+- DataOps: similar ao de cima, porém com dados de processamento
+- DevSecOps / SecOps: tratar da operacionalização da segurança de forma automatizada
+- GitOps / Infro as a Code (IAC): 

@@ -1,4 +1,20 @@
-div {
+.destaque {
     background-color: blue;
     color: white
+}
+
+li {
+    background-color: grey;
+}
+
+/* ul {
+    padding: 0;
+} */
+
+p {
+    border: 0.5rem solid black
+}
+
+#artigos {
+    border-color: yellow;
 }

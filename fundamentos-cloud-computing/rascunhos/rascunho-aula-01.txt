@@ -1,0 +1,60 @@
+- A nuvem nuvem não é uma entidade física, ela é uma rede de servidores remotos ao redor do globo
+- Poder pagar por utilização, ao invé de manter uma infraestrutura gigantesca
+
+CSP: Provedor dos serviços em cloud
+
+Sempre equilibrar Custos, Riscos e Benefícios
+
+Ao entender a finalidade de cada serviço, é possível configurá-lo de forma que reduz custos
+
+Cada plataforma possui suas calculadoras de preço.
+
+Existem recursos/serviços disponíveis apenas em algumas regiões
+
+vCpu é equivalente a uma Thread
+
+A origem da virtualização foi na década de 60
+
+Hypervisor pode virtualizar os recursos do sistemas, VMM (Virtual Machine Monitor)
+- Tipo 1: Funciona diretamente no hardware, recomendado para produção;
+- Tipo 2: Funciona sobre um SO host, utilizado como porta de entrada na virtualização
+
+Vantagens de um ambiente Cloud: 
+- Custos;
+- Confiabilidade;
+- Gerenciabilidade;
+- Flexibilidade;
+- Produtividade;
+- Atualizações;
+
+Desvantagens de um ambiente cloud:
+- Tempo de inatividade;
+- Bloqueios do fornecedor;
+- Controle limitado;
+- Tipo de contrato;
+- Migração;
+
+Serviços comuns de cloud: 
+- Servidores Virtuais;
+- Bancos de dados (relacionais e não relacionais);
+- Firewall;
+- Containers;
+- Storages (armazenamento);
+- Balanceamento de carga;
+- Gerenciamento de rede;
+- Gerenciamento de usuários;
+- Monitoramento;
+
+Outros serviços de cloud:
+- I.A.;
+- IoT;
+- Game Servers;
+- R.A. e R.V.;
+- Block Chain;
+- Robótica;
+- Entre outros...
+
+VirtualBox: Sistema de virtualização
+
+
+

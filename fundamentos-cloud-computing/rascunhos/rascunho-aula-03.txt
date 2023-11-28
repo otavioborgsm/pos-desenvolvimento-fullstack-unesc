@@ -1,0 +1,22 @@
+- RDS
+
+Serviço de banco de dados
+
+- Elastic Benaslike
+
+Plataforma como serviço
+
+- Cloud Watch
+
+Painel de monitoramento
+
+- ec2
+
+Painel de servidores
+
+
+Possível configurar alarmes para aumentar a cloud
+
+- IaaC
+
+Controle da Cloud por código - Cloud Formation

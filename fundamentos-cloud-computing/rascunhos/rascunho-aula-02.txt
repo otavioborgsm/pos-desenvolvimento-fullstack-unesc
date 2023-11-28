@@ -1,0 +1,21 @@
+- Estrutura AWS
+
+Um datacenter possui normalmente de 50.000 a 80.000 servidores físicos.
+
+Regra menor privilégio: precisa se configurar os acessos
+
+- VPS
+Servidor Privado Virtual
+Alocado a uma pessoa que pode compartilhar o acesso
+Pode armazenar diferentes serviços
+
+- On-Premise
+Toda a infraestrutura sob responsabilidade da empresa
+
+- Tipos de serviço cloud
+IaaS: Permite a replicação de uma estrutura On-Premise facilitando a migração;
+PaaS: Além da infraestrutura, o ambiente também se torna responsabilidade do Host (Mais responsabilidades a ele);
+Saas: Responsabilidade inteira do host, o Software é um serviço.
+
+
+

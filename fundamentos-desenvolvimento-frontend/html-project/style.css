@@ -25,3 +25,20 @@ header div {
     margin-top: 1rem;
     margin-bottom: 1rem;
 }
+
+footer #redes{
+    padding-left: 2rem;
+    padding-right: 2rem;
+    margin-top: 3rem
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+footer a {
+    display: block;
+    padding-top: 10px;
+}

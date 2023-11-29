@@ -1,20 +1,14 @@
-.destaque {
-    background-color: blue;
-    color: white
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-li {
-    background-color: grey;
+header p {
+    margin: 0;
 }
 
-/* ul {
-    padding: 0;
-} */
-
-p {
-    border: 0.5rem solid black
-}
-
-#artigos {
-    border-color: yellow;
+header div {
+    margin-right: 1rem;
+    margin-left: 1rem;
 }

@@ -8,6 +8,22 @@
     <script src="app.js"></script>
 </head>
 <body>
-    
+    <div>
+        <form action="#" method="post">
+            <div>
+                <label for="nome">Nome</label>
+                <input minlength="6" required type="text" name="nome">
+            </div>
+            <div>
+                <label for="email">Email</label>
+                <input required type="email" name="email">
+            </div>
+            <div>
+                <label for="celular">Celular</label>
+                <input pattern="[0-9]{11}" title="Digite o telefone com o DDD e o número sem formatação. Ex: 51999991234" required type="text" name="celular">
+            </div>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
 </body>
 </html>

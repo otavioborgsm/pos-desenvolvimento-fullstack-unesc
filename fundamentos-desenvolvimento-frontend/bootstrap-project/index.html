@@ -91,31 +91,36 @@
       <div class="col-md-6">
         <div class="container-fluid h-100">
           <div class="row h-100 d-flex align-items-center">
-            <div class="col-md-6 pt-4 mx-auto">
-              <form id="formCadastroUsuario" method="post" novalidate>
+            <div class="col-8 pt-4 mx-auto">
+              <h3>Consulta CEP</h3>
+              <form id="formConsultaCep" novalidate>
                 <div class="mb-3">
-                  <label for="nome" class="form-label">Nome: </label>
-                  <input required minlength="6" type="text" class="form-control" name="name">
+                  <label for="cep" class="form-label">CEP: </label>
+                  <input required pattern="[0-9]{8}" type="text" class="form-control" name="cep">
                   <div class="invalid-feedback">
-                    Nome é obrigatório e deve conter no mínimo 6 caracteres.
+                    O CEP é obrigatório e deve conter 8 digitos númericos
                   </div>
                 </div>
                 <div class="mb-3">
-                  <label for="email" class="form-label">E-mail: </label>
-                  <input required type="email" class="form-control" name="email">
-                  <div class="invalid-feedback">
-                    E-mail é obrigatório.
-                  </div>
+                  <label for="logradouro" class="form-label">Logradouro: </label>
+                  <input readonly type="text" class="form-control" name="logradouro">
                 </div>
                 <div class="mb-3">
-                  <label for="celular" class="form-label">Celular: </label>
-                  <input required pattern="[0-9]{11}" type="text" class="form-control" name="celular">
-                  <div class="invalid-feedback">
-                    Digite o telefone com o DDD e o número sem formatação. Ex: 51999991234
+                  <label for="bairro" class="form-label">Bairro: </label>
+                  <input readonly type="text" class="form-control" name="bairro">
+                </div>
+                <div class="row mb-3">
+                  <div class="col">
+                    <label for="localidade" class="form-label">Cidade: </label>
+                    <input readonly type="text" class="form-control" name="localidade">
+                  </div>
+                  <div class="col-3">
+                    <label for="uf" class="form-label">Estado: </label>
+                    <input readonly type="text" class="form-control" name="uf">
                   </div>
                 </div>
                 <div class="text-end">
-                  <button class="btn btn-primary">Enviar</button>
+                  <button class="btn btn-primary">Consultar</button>
                 </div>
               </form>
             </div>

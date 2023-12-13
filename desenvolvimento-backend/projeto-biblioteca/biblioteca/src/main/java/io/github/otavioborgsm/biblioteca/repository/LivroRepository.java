@@ -40,12 +40,15 @@ public class LivroRepository {
      * @param livro a ser adicionado
      * @return livro adicionado
      */
+    public Livro add(Livro livro){
+        livros.add(livro);
+        return livro;
+    }
+
     public Livro adicionar(Livro livro){
         ultimoLivro++;
         livro.setId(ultimoLivro);
-        livros.add(livro);
-
-        return livro;
+        return add(livro);
     }
 
     /**
@@ -70,6 +73,6 @@ public class LivroRepository {
         }
 
         remover(livro.getId());
-        return adicionar(livro);
+        return add(livro);
     }
 }

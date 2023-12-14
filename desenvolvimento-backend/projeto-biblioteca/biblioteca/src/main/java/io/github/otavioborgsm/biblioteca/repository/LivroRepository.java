@@ -56,6 +56,12 @@ public class LivroRepository {
      * @param id do Livro a ser removido
      */
     public void remover(Integer id){
+        Optional<Livro> livroEncontrado = obterPorId(id);
+
+        if (livroEncontrado.isEmpty()) {
+            throw new ResourceNotFoundException("Livro não encontrado");
+        }
+
         livros.removeIf(livro -> livro.getId() == id);
     }
 

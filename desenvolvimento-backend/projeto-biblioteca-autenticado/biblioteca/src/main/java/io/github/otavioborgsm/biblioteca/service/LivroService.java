@@ -7,13 +7,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import io.github.otavioborgsm.biblioteca.model.Livro;
-import io.github.otavioborgsm.biblioteca.repository.LivroRepository;
+import io.github.otavioborgsm.biblioteca.repository.LivroRepositoryMock;
 
 @Service
 public class LivroService {
     
     @Autowired
-    private LivroRepository livroRepository;
+    private LivroRepositoryMock livroRepository;
 
 
     /**

@@ -1,4 +1,4 @@
-package io.github.otavioborgsm.biblioteca.controller;
+package io.github.otavioborgsm.biblioteca.view.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 

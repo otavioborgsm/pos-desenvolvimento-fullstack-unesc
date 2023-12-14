@@ -1,13 +1,13 @@
 package io.github.otavioborgsm.biblioteca.repository;
 
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.stereotype.Repository;
 
 import io.github.otavioborgsm.biblioteca.model.Livro;
+import io.github.otavioborgsm.biblioteca.model.exception.ResourceNotFoundException;
 
 @Repository
 public class LivroRepository {
@@ -68,8 +68,8 @@ public class LivroRepository {
 
         Optional<Livro> livroEncontrado = obterPorId(livro.getId());
 
-        if (livroEncontrado == null) {
-            throw new InputMismatchException("Livro não encontrado");
+        if (livroEncontrado.isEmpty()) {
+            throw new ResourceNotFoundException("Livro não encontrado");
         }
 
         remover(livro.getId());

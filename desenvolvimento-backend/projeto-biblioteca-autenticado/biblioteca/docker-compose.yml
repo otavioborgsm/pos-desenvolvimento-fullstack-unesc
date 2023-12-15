@@ -1,0 +1,26 @@
+version: '3'
+services:
+  myspringapp:
+    image: biblioteca
+    build: .
+    ports:
+      - "8080:8080"
+    restart: always
+    depends_on:
+      - postgres
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://localhost:5432/biblioteca
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=postgresmanager
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=create
+  
+  postgres:
+    image: postgres:13.1
+    restart: always
+    ports:
+      -"5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=postgresmanager
+      - POSTGRES_USER=postgres
+      - POSTGRES_DB=biblioteca
+  

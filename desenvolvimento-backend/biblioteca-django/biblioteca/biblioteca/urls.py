@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from alunos.views import AlunoViewSet
+from rest_framework.authtoken.views import obtain_auth_token
 
 alunos_router = routers.SimpleRouter()
 alunos_router.register(
@@ -29,4 +30,5 @@ alunos_router.register(
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(alunos_router.urls)),
+    path('api-token/', obtain_auth_token, name='api-token/'),
 ]

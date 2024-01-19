@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AplicativoTeste</string>
+    <string name="btnGravar">Salvar</string>
 </resources>

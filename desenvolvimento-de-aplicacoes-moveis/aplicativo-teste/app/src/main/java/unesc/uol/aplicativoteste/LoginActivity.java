@@ -1,5 +1,6 @@
 package unesc.uol.aplicativoteste;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -38,6 +39,9 @@ public class LoginActivity extends AppCompatActivity {
                     editSenha.setError("Campo senha é obrigatório");
                 } else {
                     Toast.makeText(LoginActivity.this, "CAMPOS PREENCHIDOS", Toast.LENGTH_LONG).show();
+
+                    Intent it = new Intent(LoginActivity.this, MainActivity.class);
+                    startActivity(it);
                 }
 
             }

@@ -10,6 +10,8 @@ import android.widget.Toast;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import unesc.uol.aplicativoteste.util.KeyUtil;
+
 public class LoginActivity extends AppCompatActivity {
 
     private EditText editEmail;
@@ -40,7 +42,9 @@ public class LoginActivity extends AppCompatActivity {
                 } else {
                     Toast.makeText(LoginActivity.this, "CAMPOS PREENCHIDOS", Toast.LENGTH_LONG).show();
 
-                    Intent it = new Intent(LoginActivity.this, MainActivity.class);
+                    Intent it = new Intent(LoginActivity.this, PrincipalActivity.class);
+                    it.putExtra(KeyUtil.KEY_EMAIL, conteudoEmail);
+
                     startActivity(it);
                 }
 

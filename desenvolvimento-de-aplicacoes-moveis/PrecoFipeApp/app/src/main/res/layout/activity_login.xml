@@ -50,12 +50,12 @@
                 android:layout_weight="50"/>
 
             <Button
-                android:id="@+id/btnSair"
+                android:id="@+id/btnRegistrar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="20dp"
                 android:backgroundTint="@color/gray"
-                android:text="SAIR"
+                android:text="REGISTRO"
                 android:layout_weight="50"/>
         </LinearLayout>
 
@@ -63,7 +63,7 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Não tem conta? Clique aqui"
+            android:text="Aplicativo para consulta da tabela FIPE"
             android:textColor="@color/black"
             android:textStyle="bold"
             android:layout_marginHorizontal="20dp"

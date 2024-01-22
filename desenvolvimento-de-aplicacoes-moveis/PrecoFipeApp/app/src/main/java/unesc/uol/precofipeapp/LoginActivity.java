@@ -17,8 +17,9 @@ public class LoginActivity extends AppCompatActivity {
     private EditText editEmail;
     private EditText editSenha;
     private Button btnEntrar;
+    private Button btnRegistrar;
     private HashMap<String, String> hmpUsuario = new HashMap<String, String>();
-
+    private static final int REQUISICAO_REGISTRO = 10;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -33,6 +34,15 @@ public class LoginActivity extends AppCompatActivity {
         editSenha = findViewById(R.id.editSenha);
 
         btnEntrar = findViewById(R.id.btnEntrar);
+        btnRegistrar = findViewById(R.id.btnRegistrar);
+
+        btnRegistrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent it = new Intent(LoginActivity.this, RegistroActivity.class);
+                startActivityForResult(it, REQUISICAO_REGISTRO);
+            }
+        });
         btnEntrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -63,5 +73,18 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == REQUISICAO_REGISTRO){
+            if (resultCode == 1){
+                Toast.makeText(LoginActivity.this, "Salvou um novo usuário!", Toast.LENGTH_LONG).show();
+            } else if (resultCode == 9) {
+                Toast.makeText(LoginActivity.this, "Cancelou o registro de usuário!", Toast.LENGTH_LONG).show();
+            }
+        }
     }
 }

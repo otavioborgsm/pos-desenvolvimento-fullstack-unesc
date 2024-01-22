@@ -5,20 +5,51 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-
-    <Button
-        android:id="@+id/btnSalvar"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/gray"
-        android:text="SALVAR" />
+        android:orientation="vertical"
+        android:layout_margin="20dp">
 
-    <Button
-        android:id="@+id/btnCancelar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/blue"
-        android:text="CANCELAR" />
+        <EditText
+            android:id="@+id/editNomeUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nome do usuário"/>
+
+        <EditText
+            android:id="@+id/editEmailUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="E-mail do usuário"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="100">
+
+            <Button
+                android:id="@+id/btnSalvar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/gray"
+                android:text="SALVAR"
+                android:layout_weight="50"
+                android:layout_margin="5dp"/>
+
+            <Button
+                android:id="@+id/btnCancelar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/blue"
+                android:text="CANCELAR"
+                android:layout_margin="5dp"
+                android:layout_weight="50"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
 
 
 </LinearLayout>

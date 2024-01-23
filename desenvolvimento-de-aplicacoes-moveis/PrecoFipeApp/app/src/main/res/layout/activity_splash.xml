@@ -13,5 +13,15 @@
         android:src="@drawable/automovel"
         android:layout_marginTop="100dp"/>
 
+    <TextView
+        android:id="@+id/textBemVindo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:visibility="gone"
+        android:text="Bem vindo ao Preço Fipe App" />
+
 
 </LinearLayout>

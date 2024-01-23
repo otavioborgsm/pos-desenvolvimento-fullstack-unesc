@@ -1,4 +1,4 @@
-package unesc.uol.precofipeapp;
+package unesc.uol.precofipeapp.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,6 +11,10 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.HashMap;
+
+import unesc.uol.precofipeapp.MainActivity;
+import unesc.uol.precofipeapp.R;
+import unesc.uol.precofipeapp.util.KeyUtil;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -81,7 +85,13 @@ public class LoginActivity extends AppCompatActivity {
 
         if (requestCode == REQUISICAO_REGISTRO){
             if (resultCode == 1){
-                Toast.makeText(LoginActivity.this, "Salvou um novo usuário!", Toast.LENGTH_LONG).show();
+
+                final String resultadoEmailUsuario = data.getStringExtra(KeyUtil.KEY_REGISTRO_EMAIL_USUARIO);
+                editEmail.setText(resultadoEmailUsuario);
+
+                final String resultadoSenhaUsuario = data.getStringExtra(KeyUtil.KEY_REGISTRO_SENHA_USUARIO);
+                editSenha.setText(resultadoSenhaUsuario);
+
             } else if (resultCode == 9) {
                 Toast.makeText(LoginActivity.this, "Cancelou o registro de usuário!", Toast.LENGTH_LONG).show();
             }

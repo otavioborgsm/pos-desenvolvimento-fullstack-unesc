@@ -21,7 +21,23 @@
             android:id="@+id/editEmailUsuario"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
             android:hint="E-mail do usuário"/>
+
+        <EditText
+            android:id="@+id/editSenhaUsuario"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:hint="Senha de acesso do usuário"/>
+
+        <EditText
+            android:id="@+id/editConfirmarSenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:layout_marginBottom="10dp"
+            android:hint="ConfirmarSenha"/>
 
         <LinearLayout
             android:layout_width="match_parent"

@@ -13,7 +13,7 @@
         android:theme="@style/Theme.PrecoFipeApp"
         tools:targetApi="31">
         <activity
-            android:name=".activities.LoginActivity"
+            android:name=".activities.SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,6 +24,7 @@
 
         <activity android:name=".MainActivity" />
         <activity android:name=".activities.RegistroActivity" />
+        <activity android:name=".activities.LoginActivity" />
     </application>
 
 </manifest>

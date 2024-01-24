@@ -34,6 +34,6 @@ public class SplashAlternativaActivity extends AppCompatActivity {
                 it.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                 startActivity(it);
             }
-        }, 9000);
+        }, 4000);
     }
 }

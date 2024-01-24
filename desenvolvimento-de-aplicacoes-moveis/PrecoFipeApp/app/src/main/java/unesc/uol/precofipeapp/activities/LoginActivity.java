@@ -1,10 +1,13 @@
 package unesc.uol.precofipeapp.activities;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -22,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
     private EditText editSenha;
     private Button btnEntrar;
     private Button btnRegistrar;
+    private Switch switchLembrarSenha;
     private HashMap<String, String> hmpUsuario = new HashMap<String, String>();
     private static final int REQUISICAO_REGISTRO = 10;
 
@@ -39,6 +43,8 @@ public class LoginActivity extends AppCompatActivity {
 
         btnEntrar = findViewById(R.id.btnEntrar);
         btnRegistrar = findViewById(R.id.btnRegistrar);
+
+        switchLembrarSenha = findViewById(R.id.switchLembrarSenha);
 
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +69,15 @@ public class LoginActivity extends AppCompatActivity {
                     if (hmpUsuario.containsKey(conteudoEmail)){
                         final String senhaBanco = hmpUsuario.get(conteudoEmail);
                         if (senhaBanco.equals(conteudoSenha)){
+
+                            if (switchLembrarSenha.isChecked()){
+                                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(LoginActivity.this);
+                                SharedPreferences.Editor editor = preferences.edit();
+
+                                editor.putString(KeyUtil.KEY_USUARIO, conteudoEmail)
+                                        .putString(KeyUtil.KEY_SENHA, conteudoSenha).apply();
+                            }
+
                             Intent it = new Intent(LoginActivity.this, MainActivity.class);
 
                             startActivity(it);
@@ -77,6 +92,15 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(LoginActivity.this);
+        editEmail.setText(preferences.getString(KeyUtil.KEY_USUARIO, ""));
+        editSenha.setText(preferences.getString(KeyUtil.KEY_SENHA, ""));
+
+        if (!editEmail.getText().toString().isEmpty()){
+            switchLembrarSenha.setChecked(true);
+        }
+
     }
 
     @Override

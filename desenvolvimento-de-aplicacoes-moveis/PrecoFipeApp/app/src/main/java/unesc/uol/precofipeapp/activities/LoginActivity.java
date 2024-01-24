@@ -1,5 +1,6 @@
 package unesc.uol.precofipeapp.activities;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -11,12 +12,14 @@ import android.widget.Switch;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.HashMap;
 
 import unesc.uol.precofipeapp.MainActivity;
 import unesc.uol.precofipeapp.R;
+import unesc.uol.precofipeapp.util.DialogUtil;
 import unesc.uol.precofipeapp.util.KeyUtil;
 
 public class LoginActivity extends AppCompatActivity {
@@ -82,9 +85,11 @@ public class LoginActivity extends AppCompatActivity {
 
                             startActivity(it);
                         } else {
+                            DialogUtil.showError(LoginActivity.this, "ERRO", "Senha inválida!");
                             Toast.makeText(LoginActivity.this, "Senha inválida!", Toast.LENGTH_LONG).show();
                         }
                     }else {
+                        DialogUtil.showError(LoginActivity.this, "ERRO", "Usuário inexistente!");
                         Toast.makeText(LoginActivity.this, "Usuário inexistente!", Toast.LENGTH_LONG).show();
                     }
 

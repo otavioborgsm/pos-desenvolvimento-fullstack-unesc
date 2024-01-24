@@ -5,11 +5,9 @@ import android.content.DialogInterface;
 
 import androidx.appcompat.app.AlertDialog;
 
-import unesc.uol.precofipeapp.activities.LoginActivity;
-
 public class DialogUtil {
 
-    public static void showError(final Activity activity, final String titulo, final String mensagem) {
+    public static void show(final Activity activity, final String titulo, final String mensagem) {
 
         AlertDialog.Builder builder = new AlertDialog.Builder(activity);
         builder.setTitle(titulo);

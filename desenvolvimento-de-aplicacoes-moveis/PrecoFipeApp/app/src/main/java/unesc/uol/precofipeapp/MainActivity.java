@@ -3,13 +3,15 @@ package unesc.uol.precofipeapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
 
 import unesc.uol.precofipeapp.adapter.VeiculoAdapter;
 import unesc.uol.precofipeapp.model.Veiculo;
+import unesc.uol.precofipeapp.util.DialogUtil;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -39,6 +41,16 @@ public class MainActivity extends AppCompatActivity {
         arl.add(new Veiculo("hb20", 2016));
 
         listaVeiculos = findViewById(R.id.listaVeiculos);
+        listaVeiculos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                DialogUtil.show(
+                        MainActivity.this,
+                        "Informação",
+                        "Clicou no item " + ( position + 1 ) + " da lista"
+                );
+            }
+        });
         listaVeiculos.setAdapter(new VeiculoAdapter(MainActivity.this, arl));
 
     }

@@ -17,6 +17,7 @@ import java.util.HashMap;
 
 import unesc.uol.precofipeapp.MainActivity;
 import unesc.uol.precofipeapp.R;
+import unesc.uol.precofipeapp.database.dao.UsuarioDAO;
 import unesc.uol.precofipeapp.util.DialogUtil;
 import unesc.uol.precofipeapp.util.KeyUtil;
 
@@ -27,17 +28,13 @@ public class LoginActivity extends AppCompatActivity {
     private Button btnEntrar;
     private Button btnRegistrar;
     private Switch switchLembrarSenha;
-    private HashMap<String, String> hmpUsuario = new HashMap<String, String>();
+    private UsuarioDAO dao;
     private static final int REQUISICAO_REGISTRO = 10;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
-        hmpUsuario.put("teste", "teste");
-        hmpUsuario.put("otavio.mb@gmail.com", "123456");
-        hmpUsuario.put("administrador@gmail.com", "administrador");
 
         editEmail = findViewById(R.id.editEmail);
         editSenha = findViewById(R.id.editSenha);
@@ -66,29 +63,25 @@ public class LoginActivity extends AppCompatActivity {
                 } else if (conteudoSenha.isEmpty()) {
                     editSenha.setError("Campo senha é obrigatório");
                 } else {
+                    dao = new UsuarioDAO(LoginActivity.this);
+                    boolean isUsuarioPresente = dao.Select(conteudoEmail, conteudoSenha);
 
-                    if (hmpUsuario.containsKey(conteudoEmail)){
-                        final String senhaBanco = hmpUsuario.get(conteudoEmail);
-                        if (senhaBanco.equals(conteudoSenha)){
+                    if (isUsuarioPresente){
+                        if (switchLembrarSenha.isChecked()){
+                            SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(LoginActivity.this);
+                            SharedPreferences.Editor editor = preferences.edit();
 
-                            if (switchLembrarSenha.isChecked()){
-                                SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(LoginActivity.this);
-                                SharedPreferences.Editor editor = preferences.edit();
-
-                                editor.putString(KeyUtil.KEY_USUARIO, conteudoEmail)
-                                        .putString(KeyUtil.KEY_SENHA, conteudoSenha).apply();
-                            }
-
-                            Intent it = new Intent(LoginActivity.this, MainActivity.class);
-
-                            startActivity(it);
-                        } else {
-                            DialogUtil.show(LoginActivity.this, "ERRO", "Senha inválida!");
-                            Toast.makeText(LoginActivity.this, "Senha inválida!", Toast.LENGTH_LONG).show();
+                            editor.putString(KeyUtil.KEY_USUARIO, conteudoEmail)
+                                    .putString(KeyUtil.KEY_SENHA, conteudoSenha).apply();
                         }
-                    }else {
+
+                        Intent it = new Intent(LoginActivity.this, MainActivity.class);
+
+                        startActivity(it);
+                    } else {
                         DialogUtil.show(LoginActivity.this, "ERRO", "Usuário inexistente!");
                         Toast.makeText(LoginActivity.this, "Usuário inexistente!", Toast.LENGTH_LONG).show();
+
                     }
 
                 }

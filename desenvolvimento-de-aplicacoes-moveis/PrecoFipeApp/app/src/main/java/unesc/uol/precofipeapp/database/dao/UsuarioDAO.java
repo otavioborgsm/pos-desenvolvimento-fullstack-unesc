@@ -2,6 +2,7 @@ package unesc.uol.precofipeapp.database.dao;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 
 import unesc.uol.precofipeapp.database.DBOpenHelper;
 import unesc.uol.precofipeapp.database.model.UsuarioModel;
@@ -17,6 +18,49 @@ public class UsuarioDAO extends AbstractDAO{
 
     public UsuarioDAO(Context context) {
         db_helper = new DBOpenHelper(context);
+    }
+
+
+    public long Delete(final String email){
+
+        long linhasDeletadas = 0;
+
+        try {
+            Open();
+            linhasDeletadas = db.delete(
+                    UsuarioModel.TABELA_NOME,
+                    UsuarioModel.COLUNA_EMAIL_USUARIO +" = ? ",
+                    new String[]{email}
+            );
+
+        } finally {
+            Close();
+        }
+
+
+        return linhasDeletadas;
+    }
+
+    public long Update(final String email, final String senha){
+        long linhasAlteradas = 0;
+
+        ContentValues values = new ContentValues();
+        values.put(UsuarioModel.COLUNA_SENHA_USUARIO, senha);
+        try {
+            Open();
+
+            linhasAlteradas = db.update(
+                    UsuarioModel.TABELA_NOME,
+                    values,
+                    UsuarioModel.COLUNA_EMAIL_USUARIO + " = ? ",
+                    new String[]{email}
+            );
+
+        } finally {
+            Close();
+        }
+
+        return linhasAlteradas;
     }
 
 
@@ -45,7 +89,32 @@ public class UsuarioDAO extends AbstractDAO{
         return linhasInseridas;
     }
 
-    public UsuarioModel Select(final String usuario, final String senha){
-        return null;
+    public boolean Select(final String email, final String senha){
+        boolean isUsuarioPresente = false;
+
+        try {
+            Open();
+
+            Cursor cursor = db.query(
+                    UsuarioModel.TABELA_NOME,
+                    colunas,
+                    UsuarioModel.COLUNA_EMAIL_USUARIO + " = ? and " + UsuarioModel.COLUNA_SENHA_USUARIO +" = ?",
+                    new String[]{email, senha},
+                    null,
+                    null,
+                    null
+            );
+
+            if (cursor != null){
+                isUsuarioPresente = cursor.moveToFirst();
+            }
+
+        }
+        finally {
+            Close();
+        }
+
+
+        return isUsuarioPresente;
     }
 }

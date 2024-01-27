@@ -9,9 +9,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 import unesc.uol.precofipeapp.api.endpoint.AnoEndpoint;
 import unesc.uol.precofipeapp.api.endpoint.MarcaEndpoint;
 import unesc.uol.precofipeapp.api.endpoint.ModeloEndpoint;
+import unesc.uol.precofipeapp.api.endpoint.ValorEndpoint;
 import unesc.uol.precofipeapp.api.model.Ano;
 import unesc.uol.precofipeapp.api.model.Marca;
 import unesc.uol.precofipeapp.api.model.Modelo;
+import unesc.uol.precofipeapp.api.model.Valor;
 
 public class Api {
 
@@ -43,6 +45,14 @@ public class Api {
         AnoEndpoint endpoint = retrofit.create(AnoEndpoint.class);
 
         Call<List<Ano>> call = endpoint.getAnos(codigo, codigo_modelo);
+        call.enqueue(callback);
+    }
+
+    public static void getValor(int codigo, int codigo_modelo, String codigo_ano ,final Callback<Valor> callback){
+
+        ValorEndpoint endpoint = retrofit.create(ValorEndpoint.class);
+
+        Call<Valor> call = endpoint.getValor(codigo, codigo_modelo, codigo_ano);
         call.enqueue(callback);
     }
 

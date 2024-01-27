@@ -2,56 +2,66 @@ package unesc.uol.precofipeapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
-import java.util.ArrayList;
+import java.util.List;
 
-import unesc.uol.precofipeapp.adapter.VeiculoAdapter;
-import unesc.uol.precofipeapp.model.Veiculo;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import unesc.uol.precofipeapp.activities.ModelosActivity;
+import unesc.uol.precofipeapp.adapter.MarcaAdapter;
+import unesc.uol.precofipeapp.api.Api;
+import unesc.uol.precofipeapp.api.model.Marca;
 import unesc.uol.precofipeapp.util.DialogUtil;
+import unesc.uol.precofipeapp.util.KeyUtil;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ListView listaVeiculos;
+    private ListView listaMarcas;
+    private MarcaAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ArrayList<Veiculo> arl = new ArrayList<Veiculo>();
-        arl.add(new Veiculo("Corsa", 2006));
-        arl.add(new Veiculo("Focus", 2010));
-        arl.add(new Veiculo("Tracker", 2023));
-        arl.add(new Veiculo("Etios", 2015));
-        arl.add(new Veiculo("Onix", 2016));
-        arl.add(new Veiculo("Ferrari", 2022));
-        arl.add(new Veiculo("Belina", 1980));
-        arl.add(new Veiculo("Pulse", 2024));
-        arl.add(new Veiculo("Argo", 2018));
-        arl.add(new Veiculo("Ka", 2018));
-        arl.add(new Veiculo("Renegade", 2016));
-        arl.add(new Veiculo("Compass", 2019));
-        arl.add(new Veiculo("Golf", 2017));
-        arl.add(new Veiculo("March", 2015));
-        arl.add(new Veiculo("Fit", 2014));
-        arl.add(new Veiculo("hb20", 2016));
-
-        listaVeiculos = findViewById(R.id.listaVeiculos);
-        listaVeiculos.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        listaMarcas = findViewById(R.id.listaVeiculos);
+        listaMarcas.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                DialogUtil.show(
-                        MainActivity.this,
-                        "Informação",
-                        "Clicou no item " + ( position + 1 ) + " da lista"
-                );
+                Intent it = new Intent(MainActivity.this, ModelosActivity.class);
+                it.putExtra(KeyUtil.KEY_CODIGO_MARCA, ((Marca)adapter.getItem(position)).getCodigo());
+                startActivity(it);
             }
         });
-        listaVeiculos.setAdapter(new VeiculoAdapter(MainActivity.this, arl));
+
+        Toast.makeText(MainActivity.this, "Buscando marcas de veículos...", Toast.LENGTH_LONG).show();
+
+        Api.getMarcas(new Callback<List<Marca>>() {
+            @Override
+            public void onResponse(Call<List<Marca>> call, Response<List<Marca>> response) {
+                if (response.isSuccessful()){
+                    adapter = new MarcaAdapter(MainActivity.this, response.body());
+
+                    listaMarcas.setAdapter(adapter);
+                    adapter.notifyDataSetChanged();
+                } else{
+                    DialogUtil.show(MainActivity.this, "ERRO", "Falha ao buscar marcas do veículo.");
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Marca>> call, Throwable t) {
+                t.printStackTrace();
+                DialogUtil.show(MainActivity.this, "ERRO", "Falha ao buscar marcas do veículo.");
+            }
+        });
 
     }
 }

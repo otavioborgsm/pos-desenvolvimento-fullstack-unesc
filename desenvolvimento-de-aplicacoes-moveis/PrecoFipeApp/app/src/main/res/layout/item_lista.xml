@@ -13,10 +13,10 @@
         >
 
         <TextView
-            android:id="@+id/textVeiculo"
+            android:id="@+id/textNome"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Veículo: "
+            android:text="Nome: "
             android:textStyle="bold"/>
 
         <LinearLayout
@@ -27,10 +27,10 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Ano de Fabricação: " />
+                android:text="Código: " />
 
             <TextView
-                android:id="@+id/textAnoFabricacao"
+                android:id="@+id/textCodigo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="2022" />

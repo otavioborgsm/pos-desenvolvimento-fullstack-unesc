@@ -1,0 +1,11 @@
+- Gateway pode usar um servidor de autorização para aumentar a autentificação
+
+- ORM
+Pegar um objeto e tratar como relacional em código.
+
+- Elastic Search;
+
+
+O princípio fundamental de Microservice é definir o contexto
+Utilizar DDD para modelar
+Banco de dados por contexto

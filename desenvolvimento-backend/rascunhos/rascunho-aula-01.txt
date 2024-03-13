@@ -1,0 +1,8 @@
+REST
+representational state transfer
+
+Métodos HTTP seguros são aqueles que não alteram a base (Ex: consulta);
+
+Independente (POST) não se repete
+ 
+GET- POST - PUT - DELETE - PATCH - OPTIONS - HEAD

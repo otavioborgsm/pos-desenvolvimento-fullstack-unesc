@@ -1,0 +1,98 @@
+- Continous Delivery (Distribuição contínua) -> O passo de deploy deve ser rodado de forma manual
+- Continous Deployment (Implantação contínua) -> O deploy roda de forma automática
+
+Melhora a produtividade do programador.
+Libera os desenvolvedores de tarefas manuais.
+Encontra e investiga bugs rapidamente.
+Distribuição de atualizações rapidamente.
+
+
+
+
+
+----- DevOps on cloud -----
+
+- Infraestrutura é código:
+Controle de versionamento;
+bug tracking;
+revisão de código antes de ir para produção;
+criar "design patterns para infraestrutura";
+testar mudanças no código da infraestrutura.
+
+- Estratégias de Deploy:
+Recreate: Para a versão A para publicar a versão B;
+Ramped: Vai alterando aos poucos a versão;
+Blue/Green: Vai entrando a nova versão conforme a quantidade de tráfego da aplicação;
+Canary: Roda a nova versão para apenas alguns usuários;
+A/B Testing: Dependendo a condição do usuário ele receberá a atualização (ex: se estiver finalizando uma compra ainda não receberá a atualização);
+Shadow: a versão mais velha recebe todo o tráfego enquanto se testa a nova.
+
+
+
+
+
+----- Segurança no Cloud -----
+
+- Boas práticas:
+Pessoas: Treinamento, formação da equipe;
+Processos: Configurá-los para aumentar a segurança;
+Tecnologia: Ferramentas que irão habilitar a segurança.
+
+- Processos:
+Controle de versão, metadados e orquestração;
+Integração nos processos;
+Segurança dos processos de CI/CD;
+Arquitetura de segurança;
+gestão de incidentes;
+Red Teams, ambiente de ataque.
+
+- Tecnologias:
+Práticas de segurança no código;
+Niveis de auditoria;
+Gestão de vulnerabilidade.
+
+
+
+
+
+----- Proteção de Dados -----
+
+Início em 2016 na Europa.
+
+2017 China, 2018 Japão, 2020 California e Brasil (LGPD).
+
+
+-- O que diz a LGPD:
+
+- Direitos do consumidor: 
+O cliente tem direito de ser esquecido e apagado;
+Direito de acessar informações;
+Direito de portabilidade de dados;
+Direito de restrição de Processamento.
+
+- Obrigações da operação:
+Processos, pessoas e tecnologias;
+Impacta como dados pessoais são coletados e utilizados.
+
+- Importância:
+Segue o padrão mundial de proteção de dados;
+Crescimento do número de investimento no Brasil (melhor com regras do que sem);
+Crescimento no número de negócios internacionais.
+
+- O que deve estar em conformidade:
+Todas as empresas que coletam dados de pessoas físicos de pessoas brasileiras.
+
+Agência Nacional de Proteção de Dados (ANPD)
+
+
+
+
+
+----- BI e Machine Learning -----
+
+Colocar processos de BI e ML na pipeline.
+
+Retreina a Rede Neural de forma automática.
+
+
+

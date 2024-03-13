@@ -1,0 +1,138 @@
+----- Tipos de Cloud -----
+
+- Public Cloud:
+Nuvem compartilhada. Servidor compartilhado com outras empresas.
+
+Vantagens:
+Baixo investimento;
+Baixo custo de operação;
+Escalabilidade infinita;
+
+Desvantagens:
+Pouca customização;
+Manos governança;
+Potencial latência;
+
+- Private Cloud:
+Azure, AWS, Google...
+Minha nuvem privada, o hardware e todas as especificações são meus. Solução para empresas que não podem divulgar seus dados.
+
+Vantagens:
+Alta customização
+Alto nível de segurança
+Maior performance
+
+Desvantagens:
+Alto investimento
+Subutilização ambiente
+Alto custo de operação
+
+- Hybrid Cloud:
+Possui serviços privados e públicos. Ex: Crio um serviço privado para armazenar dados sensíveis.
+
+Vantagens:
+Grande flexibilidade
+Elasticidade
+Escalabilidade infinita
+Médio custo operação
+Segurança gerenciável
+
+Desvantagens:
+Compatibilidade
+
+
+
+
+
+----- Serviços de Nuvem -----
+
+SaaS: Software como Serviço.
+Você utiliza um software pronto
+
+PaaS: Plataforma como Serviço.
+O responsável pelo BD e runtime é a plataforma.
+
+IaaS: Infraestrutura como Serviço.
+Você é responsável pelo runtime e BD
+
+FaaS: Funções como serviço.
+Possui funções prontas. Ex: Aplicação que você manda um áudio e retorna um texto.
+
+
+
+
+
+----- Estratégias de Migração para Cloud -----
+
+Ir para o Cloud é uma questão de quando.
+
+- Motivações:
+Expandir o mercado;
+Tempo de resposta ao mercado;
+Elasticidade;
+Otimização de custo;
+Segurança.
+
+Motivações tecnológicas:
+Foge de Lock in;
+Flexibilidade;
+Manutenção inteligente da infraestrutura;
+Resiliência a falhas;
+Padronização;
+Automatização aos desenvolvedores.
+
+- Pilares da migração:
+Modernização, dados e automação.
+
+Aplicação:
+Maioria faz migração sem melhorias;
+Alguns aproveitam a migração para refazer a aplicação;
+Minoria melhora, depois move.
+
+DevOps:
+Influenciadores do DevOps: Ágil, Manufatura, Inovação.
+Acelera e automatiza processos da entrega.
+
+Dados:
+Controle de erros na base.
+
+- Jornada:
+Visão -> Estratégia -> Plano -> Execução -> Manutenção
+
+- Níveis de maturidade:
+Explorar -> Adotar -> Expandir -> Transformar
+
+- Passo a Passo:
+Construir um Business case, mostrar as melhorias, custos, obsoletismo dos equipamentos...;
+Estabelecer um modelo de pessoas, treinamentos, estrutura organizacional, gestão de pessoas...;
+Desenvolver a arquitetura, escolhendo o provedor conforme as tecnologias;
+Criar Estratégias de migração;
+Definir modelo operacional;
+
+- Time de Adoção:
+Liderança de TI -> Gestão da iniciativa -> Governança -> Arquitetura TI -> Entrega TI -> Operação TI
+
+- Migration Bubble: Bolha de custos ao migrar;
+
+O planejamento de mudança para cloud pode demorar até 6 meses.
+
+
+
+
+----- Arquitetura de Projetos em Nuvem -----
+Usuário final -> Consumidor da Cloud -> Brocker -> Auditoria -> Provedor -> operadora
+
+- Camadas 
+Balanceamento de carga -> Front -> Lógica de negócio -> BD
+
+Balanceamento de carga:
+Conforme requisições, elas são distribuídas pelos servidores.
+
+Front:
+Balancear onde ficará hospedado o front para aturar a carga de usuários.
+
+Lógica:
+Lógica elástica para aturar a demanda.
+
+Banco de Dados:
+Processos e tamanho.

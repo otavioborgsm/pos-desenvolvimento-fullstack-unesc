@@ -1,0 +1,45 @@
+----- Tipos de Arquiteturas e Estratégias de Multi-Cloud -----
+
+- Arbitrary:
+Aleatório.
+
+- Segmented:
+Por tipo de cliente, tipo de requisição, região, produto...
+
+- Choice:
+Geralmente por preço.
+
+- Parallel:
+Balanceamento de carga.
+
+- Portable:
+Sair de uma nuvem e ir para outra de forma tranquila.
+
+
+
+
+----- Balanceamento de carga -----
+
+- AWS
+
+ALB: Application Load Balancer.
+Ligado a aplicação.
+
+NLB: Network Load Balancer.
+Mais caro, mais performance.
+
+ELB: Elastic Load Balancer (obsoleto).
+
+
+
+
+----- Serverless Computing -----
+
+Desenvolvimento nativo sem gerenciamento de servidores.
+
+- Backend as a Service:
+Quando um componente da aplicação é substituído por completo por um serviço fornecido por terceiro.
+
+
+- Function as a Service:
+Trechos do meu código são executados sob demanda, executados pelo provedor do serviço.

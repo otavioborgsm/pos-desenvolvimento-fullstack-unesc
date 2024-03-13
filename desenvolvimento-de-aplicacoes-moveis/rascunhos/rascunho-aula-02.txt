@@ -1,0 +1,35 @@
+----- Intent -----
+
+Solicita a ação de outro componente do App
+
+- Pode ser usado para abrir outra tela
+- Pode iniciar um serviço
+
+
+
+----- Animações de Tela -----
+
+- Animações de drawable.
+
+Para ser considerada animação, precisa das seguintes características:
+- Duração
+- Interpolação de tempo
+- Contagem e comportamento repetido
+- Conjunto de animadores
+- Atraso de atualização de Frame
+
+
+
+----- SharedPreferences -----
+
+Utilizado para salvar pequenas configurações e informações.
+
+É uma interface que permite acessar e alterar os valores salvos.
+
+Chave e valor.
+
+
+
+----- AlertDialog -----
+
+AlertDialog, DatePickerDialog ou TimerPickerDialog

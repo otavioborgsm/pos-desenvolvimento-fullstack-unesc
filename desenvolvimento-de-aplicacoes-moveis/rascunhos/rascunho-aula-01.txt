@@ -1,0 +1,71 @@
+----- Monetização de Aplicativos -----
+
+75% dos Brasileiros utilizam smartphones para fazerem compras
+
+- Anúncios
+
+Plataforma escolhe por base no seu app o melhor anúncio para o usuário.
+Pagamento pelo anúncio é garantido
+Ganho por clique ou efetivação da compra
+
+- IN-APPS Purchase
+Ótimos resultados para games;
+Melhor do que cobrar pelo app;
+Explora competitividade;
+Barreira de compra é menor.
+
+
+
+
+----- Dicas para um bom App -----
+
+- Globalização: Lançar com vários idiomas;
+- Visual do ícone: porta de entrada do app
+- Texto de descrição: Ter um texto bem claro e descrito;
+- Monetização 1: In-App ads;
+- Monetização 2: Compras In-App;
+- Feedback 1: dados de navegação e opiniões do usuário;
+- Feedback 2: ferramentas de inteligência do Google;
+- Testes: subir para produção da melhor forma possível;
+- Ecossistema: O app anterior faz propaganda para o próximo.
+
+
+
+
+----- Conceitos e Práticas Fundamentais -----
+
+Todos os componentes são view
+
+-- Atributos básicos dos componentes:
+
+- Altura: 
+android:layout_height
+
+[valor]dp...
+[valor]%...
+match_parent/fill_parent: ocupa todo o espaço da tela disponível
+wrap_content: diminui largura do componente para elemento interno caber corretamente
+
+- Largura:
+android:layout_width
+
+mesma atribuição dos valores acima
+
+- Peso: 
+android:layout_weight
+[valor]
+
+- Direção:
+android:layout_gravity
+left, right, center, center_horizontal e center_vertical
+
+Gerenciadores de Layout:
+- LinearLayout: organiza em duas direções, ou tudo na vertical, ou tudo na horizontal;
+- RelativeLayout: organiza relativamente, os componentes em posições específicas;
+- WebView: visualizar páginas da internet;
+- TableLayout: 
+- AbsoluteLayout (descontinuado):
+- FrameLayout:
+- GridView: visualização em grade;
+- ListView: visualização em lista;
+

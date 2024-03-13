@@ -1,0 +1,29 @@
+----- SQLite -----
+
+Pode ser acessado por qualquer classe da aplicação, mas somente por ela;
+
+Implementa recursos de um Banco tradicional
+
+Código Open Source;
+
+Funciona como o próprio servidor BD, tornando mais rápido;
+
+Desvantagens:
+- Alta concorrência de uso;
+- Grandes conjuntos de dados não funcionam bem;
+- Não tem controle de acesso 100% seguro.
+
+Tipos de dados:
+- Null
+- Inteiro
+- Reais
+- Texto
+- Blob (formato binário)
+
+Linguagem DDL e DML
+
+
+
+----- Retrofit -----
+
+Desenvolvida pela Square
